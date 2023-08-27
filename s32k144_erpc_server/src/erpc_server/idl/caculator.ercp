@@ -1,0 +1,37 @@
+/*!
+ * Copyright (c) 2016, Freescale Semiconductor, Inc.
+ * Copyright 2016-2017 NXP
+ * All rights reserved.
+ *
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+program Caculator
+
+@crc
+
+// Calls from PC to Host.
+interface IMath
+{
+    add(int32 num_1, int32 num_2) -> int32
+}
+
+interface ICounter
+{
+    set_counter(int32 counter) -> void
+    get_counter() -> int32
+}
+
+
+/*
+//! Asynchronous events from Host to PC.
+interface event_from_something
+{
+    //! Void return so we can verify the message was received.
+    alarm_fired(SensorAddress addr, float temp) -> void
+
+    //! Oneway since it's less important than an alarm.
+    oneway read_results(list<SensorReadResult> results @length(count), uint32 count)
+}*/
+
